@@ -6,12 +6,12 @@ Basic [Middleman](http://middlemanapp.com) template project used by [Webonise La
 Installation
 =============
 
-Clone this repository into `~/.middleman/webonise`.
+Clone this repository as `~/.middleman`. Don't clone it as a _subdirectory_ of `~/.middleman`: clone it as `~/.middleman` itself.
 
 Usage
 =======
 
-When you create a new Middleman application, use the command:
+When you create a new Middleman application, use this command:
 
 ```bash
 middleman init . --template=webonise
