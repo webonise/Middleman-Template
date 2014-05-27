@@ -6,7 +6,11 @@ Basic [Middleman](http://middlemanapp.com) template project used by [Webonise La
 Installation
 =============
 
-Clone this repository as `~/.middleman`. Don't clone it as a _subdirectory_ of `~/.middleman`: clone it as `~/.middleman` itself.
+Clone this repository as `~/.middleman`. Don't clone it as a _subdirectory_ of `~/.middleman`: clone it as `~/.middleman` itself. So the command looks like this:
+
+```bash
+git clone git@github.com:webonise/Middleman-Template.git ~/.middleman
+```
 
 Usage
 =======
