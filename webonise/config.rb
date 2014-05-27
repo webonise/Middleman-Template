@@ -73,8 +73,9 @@ configure :build do
   activate :minify_html
 end
 
+# Ignore vi swap files so that they don't trigger rebuilds
+config[:file_watcher_ignore] << /\.swp$/
+
 # This plugin activation needs to be last!
 activate :alias
 
-# Ignore vi swap files so that they don't trigger rebuilds
-config[:file_watcher_ignore] << /\.swp$/
