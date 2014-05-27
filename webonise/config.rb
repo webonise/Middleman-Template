@@ -63,9 +63,10 @@ set :images_dir, 'images'
 # Build-specific configuration
 configure :build do
   # Remove unnecessary CSS vendor prefixes, and add any that are missing.
+  # Shouldn't be necessary for devs, who should be using modern browsers for testing
   activate :autoprefixer
 
-  # Make things small
+  # Make things small as part of the build
   activate :imageoptim
   activate :minify_css
   activate :minify_javascript
