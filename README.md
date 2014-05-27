@@ -26,6 +26,12 @@ What You Get
 
 * Our collective corporate wisdom about how to start a Middleman project.
 * Pre-configured defaults for Middleman's configuration.
+* Automatic minification on build, but nice, readable versions in development.
+* The abilty to use Sass/SCSS, Haml, Markdown, and more as markup languages just by appending file suffixes:
+    * `foo.css.scss.erb` is first run through ERB, then SCSS, and then (finally!) rendered as a CSS file.
+* All of Middleman's [helpers](http://middlemanapp.com/basics/helpers/), [templating](http://middlemanapp.com/basics/templates/), etc.
+* No need to specify the image sizes if the image should be rendered at 100% of its size.
+* No need to ever use vendor prefixes in your CSS.
 
 Modules
 --------
