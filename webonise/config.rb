@@ -40,12 +40,12 @@ set :markdown, :fenced_code_blocks => true, :smartypants => true, :autolink => t
 ###
 
 # Automatic image dimensions on image_tag helper
-# activate :automatic_image_sizes
+activate :automatic_image_sizes
 
 # Reload the browser automatically whenever files change
-# configure :development do
-#   activate :livereload
-# end
+configure :development do
+   activate :livereload
+end
 
 # Methods defined in the helpers block are available in templates
 # helpers do
@@ -54,11 +54,11 @@ set :markdown, :fenced_code_blocks => true, :smartypants => true, :autolink => t
 #   end
 # end
 
-set :css_dir, 'stylesheets'
+set :css_dir, 'css'
 
-set :js_dir, 'javascripts'
+set :js_dir, 'js'
 
-set :images_dir, 'images'
+set :images_dir, 'img'
 
 # Build-specific configuration
 configure :build do
