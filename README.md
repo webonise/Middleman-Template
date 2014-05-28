@@ -23,6 +23,35 @@ When you create a new Middleman application, use this command:
 middleman init . --template=webonise
 ```
 
+Directory Structure
+---------------------
+
+Put your HTML in `./source`, your Sass/SCSS files in `./source/css`, your JavaScript in `./source/js`, and your images in `/.source/img`.
+
+Middleman will build into `./build`.
+
+Development Cycle
+-----------------
+
+Run this command to start a server:
+
+```bash
+bundle exec middleman
+```
+
+You make changes in your source code, and Middleman automatically rebuilds in the background.
+
+Deployment Packaging
+---------------------
+
+When you are ready to produce a deployment package, execute this command:
+
+```bash
+bundle exec middleman build
+```
+
+This should be done before you do a `git push`, because building the deployment package may detect problems with your code.
+
 What You Get
 ==============
 
@@ -34,6 +63,7 @@ What You Get
 * All of Middleman's [helpers](http://middlemanapp.com/basics/helpers/), [templating](http://middlemanapp.com/basics/templates/), etc.
 * No need to specify the image sizes if the image should be rendered at 100% of its size.
 * No need to ever use vendor prefixes in your CSS.
+* Your JavaScript file can include another file wholsesale using `//= require "jquery"` or `//= require "your_file_name"`.
 
 Modules
 --------
