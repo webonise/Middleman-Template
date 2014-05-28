@@ -12,6 +12,8 @@ Clone this repository as `~/.middleman`. Don't clone it as a _subdirectory_ of `
 git clone git@github.com:webonise/Middleman-Template.git ~/.middleman
 ```
 
+Then, install the [`imageoptim` external dependencies](http://github.com/toy/image_optim#binaries-installation), which you will have to install.
+
 Usage
 =======
 
@@ -40,7 +42,7 @@ Modules
 * [jquery-middleman](http://github.com/jasl/jquery-middleman) -- So you have baked-in [JQuery](http://jquery.com/).
 * [font-awesome-middleman](http://github.com/cristianferrarig/font-awesome-middleman), so you have baked-in [Font Awesome](http://fortawesome.github.io/Font-Awesome/).
 * [middleman-alias](http://github.com/Octo-Labs/middleman-alias), so that you can have Middleman generate SEO-friendly redirects.
-* [middleman-imageoptim](http://github.com/plasticine/middleman-imageoptim), so that you aren't serving unnecessarily large files on the web. This requires [installing some external dependencies](http://github.com/toy/image_optim#binaries-installation), which you will have to install.
+* [middleman-imageoptim](http://github.com/plasticine/middleman-imageoptim), so that you aren't serving unnecessarily large files on the web.
 
 Things Being Considered for Inclusion
 ======================================
