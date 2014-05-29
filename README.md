@@ -32,21 +32,25 @@ Middleman will build into `./build`.
 Development Cycle
 -----------------
 
-When you first check out the project, run this code in the root of the project to install the necessary gems:
+When you first check out the project, you need to install the appropriate Gems into your repository. If you haven't done this before, it may appear to hang, but
+give it a few minutes. Here is the code to run in the root of the project to install the necessary gems:
 
 ```bash
 bundle install
 ```
 
-You will also need to run that command if your `Gemfile` changes.
-
-You can then run this command to start a server:
+With your gems in place, you can then run this command to start a server:
 
 ```bash
 bundle exec middleman
 ```
 
 You make changes in your source code, and Middleman automatically rebuilds in the background.
+
+If you make changes to `Gemfile`, then you will need to run `bundle install` again: that is how it will pick up the new changes. If you ever want to get an
+entirely updated versions of gems, blow away `Gemfile.lock` and run that command again. If you want a specific gem to be updated, then remove that particular
+line from `Gemfile.lock`.
+
 
 Deployment Packaging
 ---------------------
