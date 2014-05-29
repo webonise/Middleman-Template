@@ -19,6 +19,3 @@
 
 # Ignore vi swap files
 .*.swp
-
-# Forget about the locked Gemfile
-Gemfile.lock
