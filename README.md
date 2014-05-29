@@ -22,7 +22,6 @@ When you create a new Middleman application, use this command:
 ```bash
 middleman init . --template=webonise
 ```
-
 Directory Structure
 ---------------------
 
@@ -33,7 +32,15 @@ Middleman will build into `./build`.
 Development Cycle
 -----------------
 
-Run this command to start a server:
+When you first check out the project, run this code in the root of the project to install the necessary gems:
+
+```bash
+bundle install
+```
+
+You will also need to run that command if your `Gemfile` changes.
+
+You can then run this command to start a server:
 
 ```bash
 bundle exec middleman
