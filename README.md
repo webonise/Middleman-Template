@@ -90,3 +90,8 @@ Things Being Considered for Inclusion
 
 * [middleman-favicon-maker](http://github.com/follmann/middleman-favicon-maker) -- Would generate favicons automatically from a base image, but requires ImageMagick to be installed and generally takes too much configuration/boilerplate.
 * [middleman-google-analytics](http://github.com/danielbayerlein/middleman-google-analytics) -- Would include Google Analytics code automatically, but best to hook this up on a per-project basis. If you want it, add it yourself.
+
+Known Issues
+=============
+
+* Ketan Ghumatkar struggled with Ruby 2.0 reporting `uninitialized constant Middleman::Application::MiddlemanApplication1::Redcarpet (NameError)`. Upgrading Ruby resolved the issue.
