@@ -64,7 +64,13 @@ set :images_dir, 'img'
 configure :build do
   # Remove unnecessary CSS vendor prefixes, and add any that are missing.
   # Shouldn't be necessary for devs, who should be using modern browsers for testing
-  activate :autoprefixer
+  activate :autoprefixer do |config|
+    # Support the last version of each browser and any browser that has more than 5% adoption
+    config.browsers = ["last 1 version", "> 5%"]
+
+    # Make the output CSS pretty
+    config.cascade = true
+  end
 
   # Make things small as part of the build
   activate :imageoptim
