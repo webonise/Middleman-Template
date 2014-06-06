@@ -65,8 +65,15 @@ configure :build do
   # Remove unnecessary CSS vendor prefixes, and add any that are missing.
   # Shouldn't be necessary for devs, who should be using modern browsers for testing
   activate :autoprefixer do |config|
-    # Support the last version of each browser and any browser that has more than 5% adoption
-    config.browsers = ["last 1 version", "> 5%"]
+    # Which browsers should we support
+    config.browsers = [
+      # Google supports the last 2 versions. Follow their lead.
+      "last 2 versions",
+      # Going down to 1% results in autoprefixer generating downright bad CSS.
+      "> 2%",
+      # Be nice to universities
+      "Firefox ESR"
+    ]
 
     # Make the output CSS pretty
     config.cascade = true
@@ -77,7 +84,7 @@ configure :build do
   activate :minify_css
   activate :minify_javascript
   activate :minify_html
-  activate :gzip
+  activate :gzip # Requires webserver configuration to take advantage of this
 end
 
 # Ignore vi swap files so that they don't trigger rebuilds
