@@ -37,6 +37,7 @@ When you first check out the project, you need to install the appropriate Gems, 
 If you haven't done this before, it may appear to hang, but give it a few minutes. Here is the code to run in the root of the project to install everything:
 
 ```bash
+npm install
 gulp install
 ```
 
