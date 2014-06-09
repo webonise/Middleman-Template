@@ -12,44 +12,51 @@ Clone this repository as `~/.middleman`. Don't clone it as a _subdirectory_ of `
 git clone git@github.com:webonise/Middleman-Template.git ~/.middleman
 ```
 
-Then, install the [`imageoptim` external dependencies](http://github.com/toy/image_optim#binaries-installation), which you will have to install.
-
 Usage
 =======
 
-When you create a new Middleman application, use this command:
+When you create a new Middleman application, use these commands:
 
 ```bash
 middleman init . --template=webonise
+npm install
+gulp install
 ```
+
 Directory Structure
 ---------------------
 
-Put your HTML in `./source`, your Sass/SCSS files in `./source/css`, your JavaScript in `./source/js`, and your images in `./source/img`.
+Put your HTML in `./source`, your Sass/SCSS files in `./source/css`, your CoffeeScript/JavaScript in `./source/js`, and your images in `./source/img`.
 
 Middleman will build into `./build`.
 
 Development Cycle
 -----------------
 
-When you first check out the project, you need to install the appropriate Gems into your repository. If you haven't done this before, it may appear to hang, but
-give it a few minutes. Here is the code to run in the root of the project to install the necessary gems:
+When you first check out the project, you need to install the appropriate Gems, binaries, and node modules onto your system.
+If you haven't done this before, it may appear to hang, but give it a few minutes. Here is the code to run in the root of the project to install everything:
 
 ```bash
-bundle install
+gulp install
 ```
 
-With your gems in place, you can then run this command to start a server:
+With your dependencies in place, you can then run this command to start a server:
 
 ```bash
-bundle exec middleman
+gulp middleman:server
+```
+
+This is equivalent to:
+
+```bash
+bundle exec middleman server
 ```
 
 You make changes in your source code, and Middleman automatically rebuilds in the background.
 
-If you make changes to `Gemfile`, then you will need to run `bundle install` again: that is how it will pick up the new changes. If you ever want to get an
+If you make changes to `Gemfile`, then you will need to run `gulp install` again: that is how it will pick up the new changes. If you ever want to get an
 entirely updated versions of gems, blow away `Gemfile.lock` and run that command again. If you want a specific gem to be updated, then remove that particular
-line from `Gemfile.lock`.
+line from `Gemfile.lock` and run that command again.
 
 
 Deployment Packaging
@@ -58,7 +65,7 @@ Deployment Packaging
 When you are ready to produce a deployment package, execute this command:
 
 ```bash
-bundle exec middleman build
+gulp build
 ```
 
 This should be done before you do a `git push`, because building the deployment package may detect problems with your code.
@@ -66,7 +73,7 @@ This should be done before you do a `git push`, because building the deployment 
 What You Get
 ==============
 
-* Our collective corporate wisdom about how to start a Middleman project.
+* Our collective corporate wisdom about how to start a Middleman project leveraging Gulp.
 * Pre-configured defaults for Middleman's configuration.
 * Automatic minification on build, but nice, readable versions in development.
 * The abilty to use Sass/SCSS, Haml, Markdown, and more as markup languages just by appending file suffixes:

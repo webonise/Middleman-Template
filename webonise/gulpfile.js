@@ -28,11 +28,15 @@ var spawn = function(cmd, cmd_args) {
   };
 };
 
-gulp.watch(["source/**/*", "config.rb"], ['middleman:build']);
+//gulp.watch(["source/**/*", "config.rb"], ['middleman:build']);
 
-gulp.task("jenkins", ["middleman:build"], nop);
+gulp.task("jenkins", ["build"], nop);
+
+gulp.task("build", ["middleman:build"], nop);
 
 gulp.task("middleman:build", spawn('bundle', 'exec', 'middleman', 'build'));
+
+gulp.task("middleman:server", spawn('bundle', 'exec', 'middleman'));
 
 gulp.task("install", ["install:" + process.platform, "install:npm", "install:bundle"], nop);
 
@@ -48,3 +52,7 @@ gulp.task("install:linux", spawn("apt-get", "install", "-y",
   "advancecomp", "gifsicle", "jhead", "jpegoptim", "libjpeg-progs", "optipng", "pngcrush"
 ));
 
+gulp.task("install:win32", function() {
+  gutil.log("You are responsible for figuring out how to install the necessary binaries to build on Win32");
+  gutil.log("For help, see http://github.com/toy/image_optim#binaries-installation");
+});
