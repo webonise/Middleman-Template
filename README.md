@@ -25,7 +25,7 @@ middleman init . --template=webonise
 Directory Structure
 ---------------------
 
-Put your HTML in `./source`, your Sass/SCSS files in `./source/css`, your JavaScript in `./source/js`, and your images in `/.source/img`.
+Put your HTML in `./source`, your Sass/SCSS files in `./source/css`, your JavaScript in `./source/js`, and your images in `./source/img`.
 
 Middleman will build into `./build`.
 
