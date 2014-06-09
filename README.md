@@ -26,7 +26,7 @@ gulp install
 Directory Structure
 ---------------------
 
-Put your HTML in `./source`, your Sass/SCSS files in `./source/css`, your CoffeeScript/JavaScript in `./source/js`, and your images in `./source/img`.
+Put your HTML in `./source`, your Sass/CSS files in `./source/css`, your CoffeeScript/JavaScript in `./source/js`, and your images in `./source/img`.
 
 Middleman will build into `./build`.
 
