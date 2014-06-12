@@ -41,6 +41,8 @@ gulp.task("middleman", ["middleman:server"], nop);
 
 gulp.task("middleman:build", spawn('bundle', 'exec', 'middleman', 'build'));
 
+gulp.task("middleman:build:verbose", spawn('bundle', 'exec', 'middleman', 'build', '--verbose'));
+
 gulp.task("middleman:server", spawn('bundle', 'exec', 'middleman'));
 
 gulp.task("install", ["install:" + process.platform, "install:npm", "install:bundle"], function() {
