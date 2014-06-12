@@ -1,9 +1,11 @@
 {
+  "README": "README.md",
+  "description": null,
+  "author": null,
+  "license": null,
   "repository": {
     "type": "git",
-    "url": null,
-    "README": null,
-    "description": null
+    "url": null
   },
   "engines": {
     "node": ">= 0.10.0"
@@ -11,7 +13,9 @@
   "devDependencies": {
     "gulp": "^3.7.0",
     "gulp-exec": "^2.0.1",
+    "gulp-htmlhint": "0.0.7",
     "gulp-util": "^2.2.16",
+    "gulp-w3cjs": "^0.2.0",
     "svgo": "^0.4.4",
     "underscore": "^1.6.0"
   }

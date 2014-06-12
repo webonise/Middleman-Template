@@ -17,10 +17,6 @@ gem "tzinfo-data", platforms: [:mswin, :mingw]
 # Let the system worry about vendor prefixes
 gem 'middleman-autoprefixer'
 
-# Asset modules
-gem 'font-awesome-middleman'
-gem 'jquery-middleman'
-
 # Allow pages to specify their SEO-friendly aliases
 gem 'middleman-alias'
 

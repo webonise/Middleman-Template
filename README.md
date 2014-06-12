@@ -74,6 +74,7 @@ This should be done before you do a `git push`, because building the deployment 
 What You Get
 ==============
 
+* `gulp html:check` to check your HTML for validation and style.
 * Our collective corporate wisdom about how to start a Middleman project leveraging Gulp.
 * Pre-configured defaults for Middleman's configuration.
 * Automatic minification on build, but nice, readable versions in development.
@@ -88,8 +89,6 @@ Modules
 --------
 
 * [middleman-autoprefixer](http://github.com/porada/middleman-autoprefixer), so you don't ever have to write a vendor prefix in CSS again, and unnecessary ones are filtered out.
-* [jquery-middleman](http://github.com/jasl/jquery-middleman) -- So you have baked-in [JQuery](http://jquery.com/).
-* [font-awesome-middleman](http://github.com/cristianferrarig/font-awesome-middleman), so you have baked-in [Font Awesome](http://fortawesome.github.io/Font-Awesome/).
 * [middleman-alias](http://github.com/Octo-Labs/middleman-alias), so that you can have Middleman generate SEO-friendly redirects.
 * [middleman-imageoptim](http://github.com/plasticine/middleman-imageoptim), so that you aren't serving unnecessarily large files on the web.
 
