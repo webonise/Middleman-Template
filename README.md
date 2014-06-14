@@ -91,6 +91,7 @@ Modules
 * [middleman-autoprefixer](http://github.com/porada/middleman-autoprefixer), so you don't ever have to write a vendor prefix in CSS again, and unnecessary ones are filtered out.
 * [middleman-alias](http://github.com/Octo-Labs/middleman-alias), so that you can have Middleman generate SEO-friendly redirects.
 * [middleman-imageoptim](http://github.com/plasticine/middleman-imageoptim), so that you aren't serving unnecessarily large files on the web.
+* [middleman-ngmin](https://github.com/bhollis/middleman-ngmin), so that it is safe to run JavaScript minimization on Angular scripts. (This module is installed but disabled by default.)
 
 Things Being Considered for Inclusion
 ======================================

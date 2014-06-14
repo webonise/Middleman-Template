@@ -82,6 +82,7 @@ configure :build do
   # Make things small as part of the build
   activate :imageoptim
   activate :minify_css
+  # activate :ngmin  # Uncomment this if you use Angular
   activate :minify_javascript
   activate :minify_html
   activate :gzip # Requires webserver configuration to take advantage of this

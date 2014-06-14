@@ -21,6 +21,7 @@ gem 'middleman-autoprefixer'
 gem 'middleman-alias'
 
 # Gems to make things small
+gem 'middleman-ngmin'  # Angular help; see https://github.com/btford/ngmin
 gem "middleman-minify-html"
 gem "middleman-imageoptim"
 
@@ -35,3 +36,6 @@ gem "coffee-script"
 gem "RedCloth"
 gem "less"
 gem "redcarpet"
+
+# Speeds up Compass spriting
+gem 'oily_png'
