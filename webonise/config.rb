@@ -48,11 +48,22 @@ configure :development do
 end
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+
+  # Shorthand to include CSS using absolute path to the CSS dir
+  def include_css(*paths)
+    parent = settings.css_dir
+    paths = paths.map { |it| "/#{parent}/#{it}" }
+    stylesheet_link_tag paths
+  end
+
+  # Shorthand to include JS using absolute path to the JS dir
+  def include_js(*paths)
+    parent = settings.js_dir
+    paths = paths.map { |it| "/#{parent}/#{it}" }
+    javascript_include_tag paths
+  end
+end
 
 set :css_dir, 'css'
 
