@@ -84,3 +84,15 @@ gulp.task("html:hint", ["middleman:build", "html:debug-help"], function() {
     .pipe(htmlhint({"htmlhintrc":".htmlhintrc"}))
     .pipe(htmlhint.reporter());
 });
+
+/**
+* nginx tasks. These should only be used for sanity checking the build. Most of the time, you want to use "gulp middleman:server".
+* Using "middleman:server" provides equivalent behavior, but without performing the minimization, which makes things both faster and more developer-friendly.
+*
+* The configuration file presumes that you have "middleman.local" set up as an alias for "localhost" in your /etc/hosts file.
+* (See https://webonise.atlassian.net/wiki/display/AS/Nginx+Web+Server#NginxWebServer-SettingUpaNewHost for help on that.)
+*/
+gulp.task("nginx:start", ["middleman:build:verbose"], spawn("nginx", "-p", process.cwd(), "-c", "nginx.conf"));
+gulp.task("nginx:stop", [], spawn("nginx", "-p", process.cwd(), "-c", "nginx.conf", "-s", "stop"));
+
+
