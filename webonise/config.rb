@@ -10,7 +10,7 @@ class FixPermissions < Middleman::Extension
   def initialize(app, options_hash={}, &block)
     super
     app.after_build do |builder|
-      builder.run "chmod 644 -R '#{app.build_dir}'"
+      builder.run "chmod -R 644 '#{app.build_dir}'"
     end
   end
 end
