@@ -106,3 +106,4 @@ Known Issues
 
 * Ketan Ghumatkar struggled with Ruby 2.0 reporting `uninitialized constant Middleman::Application::MiddlemanApplication1::Redcarpet (NameError)`. Upgrading Ruby resolved the issue.
 * If you are using `middleman-ngmin`, then you need to concatenate your Angular files together: I'd suggest [using Middleman's built-in `//=require`](http://middlemanapp.com/basics/asset-pipeline/#dependency-management) to accomplish this.
+    * Even with the concatenation, we've encountered some cases where it wasn't smart enough to perform the DI. Be sure to double-check your minified JS if you use `ngmin`.
