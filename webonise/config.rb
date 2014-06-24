@@ -5,6 +5,17 @@ end
 set :markdown_engine, :redcarpet
 set :markdown, :fenced_code_blocks => true, :smartypants => true, :autolink => true, :with_toc_data => true, :footnotes => true
 
+# Changing permission after build
+class FixPermissions < Middleman::Extension
+  def initialize(app, options_hash={}, &block)
+    super
+    app.after_build do |builder|
+      builder.run "chmod 644 -R '#{app.build_dir}'"
+    end
+  end
+end
+::Middleman::Extensions.register(:fix_perm, FixPermissions)
+
 ###
 # Compass
 ###
@@ -101,6 +112,9 @@ end
 
 # Ignore vi swap files so that they don't trigger rebuilds
 config[:file_watcher_ignore] << /\.swp$/
+
+# Make sure everything has the right permissions
+activate :fix_perm
 
 # This plugin activation needs to be last!
 activate :alias

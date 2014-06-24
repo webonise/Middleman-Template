@@ -83,9 +83,9 @@ What You Get
 * No need to specify the image sizes if the image should be rendered at 100% of its size.
 * No need to ever use vendor prefixes in your CSS.
 * `gulp html:check` to check your HTML for validation and style.
-* `gulp middleman:build`, `gulp middleman:build:verbose`, and `gulp:middleman:server` for running Middleman's build, verbose build, and server.
+* `gulp middleman:build`, `gulp middleman:build:verbose`, and `gulp middleman:server` for running Middleman's build, verbose build, and server.
 * `gulp nginx:start` and `gulp nginx:stop` to start and stop Nginx hosting the build directory. (See the Gulpfile for details.)
-* Your JavaScript file can include another file wholsesale using `//= require "jquery"` or `//= require "your_file_name"`.
+* Middleman will automatically fix permissions on the built files so that they are able to served.
 
 Modules
 --------
