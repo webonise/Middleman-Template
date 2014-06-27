@@ -77,10 +77,21 @@ helpers do
 end
 
 set :css_dir, 'css'
-
 set :js_dir, 'js'
-
 set :images_dir, 'img'
+
+# Use Uglfier in "beautify" mode in development
+# This will allow us to catch and debug any minifier-created issues
+# (Minifier-created issues are bugs in either the minifier or our code: please report/fix them!)
+activate :minify_javascript
+set :js_compressor, Uglifier.new(
+  :output => {
+    :beautify => true,
+    :preserve_line => true,
+    :indent_level => 2
+  },
+  :screw_ie8 => true
+)
 
 # Build-specific configuration
 configure :build do
@@ -105,9 +116,11 @@ configure :build do
   activate :imageoptim
   activate :minify_css
   # activate :ngmin  # Uncomment this if you use Angular
-  activate :minify_javascript
   activate :minify_html
-  activate :gzip # Requires webserver configuration to take advantage of this
+  #activate :gzip # Requires webserver configuration to take advantage of this
+
+  # Change the JS compressor to actually do the compression
+  set :js_compressor, Uglifier.new(:screw_ie8 => true)
 end
 
 # Ignore vi swap files so that they don't trigger rebuilds
