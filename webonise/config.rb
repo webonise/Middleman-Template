@@ -10,7 +10,20 @@ class FixPermissions < Middleman::Extension
   def initialize(app, options_hash={}, &block)
     super
     app.after_build do |builder|
-      builder.run "chmod -R 644 '#{app.build_dir}'"
+      FixPermissions.chmodr(app.build_dir)
+    end
+  end
+
+  def self.chmodr(dir)
+    return unless File.directory?(dir)
+    Dir.foreach(dir) do |entry|
+      if(entry != "." && entry != "..")
+        entry = File.absolute_path(entry, dir)
+        mode = 0644
+        mode = 0755 if(File.directory?(entry))
+        File.chmod(mode,entry)
+        chmodr(entry)
+      end
     end
   end
 end
@@ -113,7 +126,7 @@ configure :build do
   end
 
   # Make things small as part of the build
-  activate :imageoptim
+  activate :imageoptim  # If this is too slow for your process, your process is broke
   activate :minify_css
   # activate :ngmin  # Uncomment this if you use Angular
   activate :minify_html
