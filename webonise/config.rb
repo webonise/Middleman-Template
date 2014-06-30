@@ -1,3 +1,5 @@
+require 'uglifier'
+
 # Mixin to use RedCarpet for Markdown, and Redcarpet's SmartyPants for rendering HTML
 class HTMLWithPants < Redcarpet::Render::HTML
   include Redcarpet::Render::SmartyPants
