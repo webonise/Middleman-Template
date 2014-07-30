@@ -73,6 +73,9 @@ configure :development do
    activate :livereload
 end
 
+# Use double quotes to wrap attributes
+set :haml, { :attr_wrapper => '"' }
+
 # Methods defined in the helpers block are available in templates
 helpers do
 
