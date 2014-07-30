@@ -43,7 +43,8 @@ gulp.task("middleman:build", spawn('bundle', 'exec', 'middleman', 'build'));
 
 gulp.task("middleman:build:verbose", spawn('bundle', 'exec', 'middleman', 'build', '--verbose'));
 
-gulp.task("middleman:server", spawn('bundle', 'exec', 'middleman'));
+// Always run the server in verbose mode: it's not actually that verbose
+gulp.task("middleman:server", spawn('bundle', 'exec', 'middleman', '--verbose'));
 
 gulp.task("install", ["install:" + process.platform, "install:npm", "install:bundle"], function() {
   gutil.log("Be sure you have also installed", chalk.bold.cyan('pngout'), ":", chalk.bold.red('http://github.com/toy/image_optim#pngout-installation-optional'));
